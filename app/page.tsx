@@ -5,6 +5,7 @@ export default function Home() {
   return (
     <div>
       {/* <Image src={RSC_IMAGE_MAPPING.LOGO} alt="Logo ERP" /> */}
+      test
     </div>
   );
 }
