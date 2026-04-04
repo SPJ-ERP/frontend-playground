@@ -3,8 +3,9 @@ import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 import SidebarMain from "@/components/navigation/sidebar-main";
 import { cn } from "@/lib/utils";
+import NavMain from "@/components/navigation/nav-main";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -27,7 +28,10 @@ export default function RootLayout({
       <body className={`${poppins.variable} antialiased`}>
         <main className="flex flex-row">
           <SidebarMain />
-        {children}
+          <div className="flex-1 flex flex-col">
+            <NavMain />
+            {children}
+          </div>
         </main>
       </body>
     </html>

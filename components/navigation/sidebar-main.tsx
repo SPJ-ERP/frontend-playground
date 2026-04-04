@@ -24,7 +24,7 @@ const ITEMS: SidebarItem[] = [
   {
     name: "Dashboard",
     icon: "solar:home-smile-outline",
-    href: "/dashboard",
+    href: "/",
     type: "default",
   },
   {
@@ -48,17 +48,16 @@ const SidebarMain = () => {
   const pathname = usePathname();
 
   return (
-    <aside className="w-[220px] min-h-screen bg-white border-r border-gray-200 flex flex-col flex-shrink-0 px-3 py-5 gap-1">
-      {/* Logo */}
-      <div className="flex items-center gap-2.5 px-2 pb-5 mb-2 border-b border-gray-200">
-        <Icon icon="solar:box-bold" className="text-[24px] text-[#1e2d6b]" />
-        <span className="text-[15px] font-bold text-[#1e2d6b] tracking-wide">
+    <aside className="w-55 min-h-screen bg-white border-r border-gray-200 flex flex-col shrink-0  py-5 gap-1">
+
+      <div className="flex items-center gap-2.5 pb-5 mb-2 border-b border-gray-200 px-5" >
+        <Icon icon="solar:box-bold" className="text-[24px] text-[#2D378E]" />
+        <span className="text-[15px] font-bold text-[#2D378E] tracking-wide">
           ERP SPJ
         </span>
       </div>
 
-      {/* Nav Items */}
-      <nav className="flex flex-col gap-0.5">
+      <nav className="flex flex-col gap-1 px-3">
         {ITEMS.map((item) =>
           item.type === "default" ? (
             <SidebarDefaultItem
@@ -104,11 +103,11 @@ const SidebarDefaultItem = ({
       href={href}
       className={`flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-[13.5px] font-medium transition-colors duration-150 ${
         isActive
-          ? "bg-[#1e2d6b] text-white"
-          : "text-gray-500 hover:bg-indigo-50 hover:text-[#1e2d6b]"
+          ? "bg-[#2D378E] text-white"
+          : "text-gray-500 hover:bg-indigo-50 hover:text-[#2D378E]"
       }`}
     >
-      <Icon icon={icon} className="text-[18px] flex-shrink-0" />
+      <Icon icon={icon} className="text-[18px] shrink-0" />
       <span>{name}</span>
     </Link>
   );
@@ -137,15 +136,15 @@ const SidebarDropdownItem = ({
         onClick={() => setIsOpen((prev) => !prev)}
         className={`flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-[13.5px] font-medium w-full text-left transition-colors duration-150 ${
           isActive
-            ? "bg-[#1e2d6b] text-white"
-            : "text-gray-500 hover:bg-indigo-50 hover:text-[#1e2d6b]"
+            ? "bg-[#2D378E] text-white"
+            : "text-gray-500 hover:bg-indigo-50 hover:text-[#2D378E]"
         }`}
       >
-        <Icon icon={icon} className="text-[18px] flex-shrink-0" />
+        <Icon icon={icon} className="text-[18px] shrink-0" />
         <span className="flex-1">{name}</span>
         <Icon
           icon="solar:alt-arrow-down-outline"
-          className={`text-[14px] flex-shrink-0 transition-transform duration-200 ${
+          className={`text-[14px] shrink-0 transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
           }`}
         />
@@ -164,8 +163,8 @@ const SidebarDropdownItem = ({
                 href={subMenu.href}
                 className={`block px-2.5 py-1.5 rounded-md text-[13px] transition-colors duration-150 ${
                   isSubActive
-                    ? "text-[#1e2d6b] font-semibold underline underline-offset-2"
-                    : "text-gray-500 hover:text-[#1e2d6b] hover:underline"
+                    ? "text-[#2D378E] font-semibold underline underline-offset-2"
+                    : "text-gray-500 hover:text-[#2D378E] hover:underline"
                 }`}
               >
                 {subMenu.name}
