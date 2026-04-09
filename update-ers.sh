@@ -2,7 +2,7 @@
 
 set -e
 
-REPO_URL="https://github.com/devit7/test-resource.git"
+REPO_URL="https://github.com/SPJ-ERP/ers-resources.git"
 TARGET_DIR="ers-resources"
 
 echo ""
@@ -18,6 +18,9 @@ fi
 echo "[Cloning] Cloning fresh copy into $TARGET_DIR..."
 echo ""
 git clone --branch main --depth 1 "$REPO_URL" "$TARGET_DIR"
+
+echo "[Cleanup] Removing .git directory..."
+rm -rf "$TARGET_DIR/.git"
 
 echo ""
 echo "[Done] $TARGET_DIR"

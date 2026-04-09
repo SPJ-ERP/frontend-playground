@@ -1,7 +1,9 @@
 // constant/assets.ts
-// import { RSC_IMAGE_MAPPING } from "@/erp-resources";
+
+import { ERS_IMAGE_MAPPING } from "@/ers-resources";
 
 // Di sini kita mendaftarkan HANYA aset yang dipakai oleh modul ini
 export const APP_ASSETS = {
-//   LOGO_UTAMA: RSC_IMAGE_MAPPING.LOGO,
+  MAIN_LOGO: ERS_IMAGE_MAPPING.LOGO,
+  LOGIN_IMAGE: ERS_IMAGE_MAPPING.LOGIN_IMAGE,
 };

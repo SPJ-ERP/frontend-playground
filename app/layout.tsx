@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
+import SidebarMain from "@/components/navigation/main/sidebar";
+import { cn } from "@/lib/utils";
+import NavMain from "@/components/navigation/main/nav";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -23,11 +24,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" className={cn("font-sans", inter.variable)}>
+      <body className={`${poppins.variable} antialiased `}>
+        <div className="flex min-h-screen">
+          <SidebarMain />
+          <div className="flex-1 flex flex-col">
+            <NavMain />
+            <main className="p-4 flex-1 bg-slate-100">
+              {children} {/* Konten halaman dashboard akan masuk ke sini */}
+            </main>
+          </div>
+        </div>
       </body>
     </html>
   );

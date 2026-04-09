@@ -1,10 +1,10 @@
-// import { RSC_IMAGE_MAPPING } from "@/test-resources";
+"use client";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div>
-      {/* <Image src={RSC_IMAGE_MAPPING.LOGO} alt="Logo ERP" /> */}
-    </div>
+    <main className="grid grid-cols-2">
+        INI DASHBOARD
+    </main>
   );
 }
